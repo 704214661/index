@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        单项数据绑定：<input type="text" v-bind:value="name"><br/>
+        双项数据绑定：<input type="text" v-model:value="name">
+
+        <!--v-model只能用在表单类元素（输入类元素）
+        单项数据绑定：页面输入框值  会  绑定到data中的name中
+        双项数据绑定：页面输入框值   不会   绑定到data中的name中
+        -->
+        
+        <h2 v-bind:x="name">你好啊</h2>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false;// 阻止vue在启动时生成生产提示
+    
+    new Vue({
+        el: '#root',
+        data: {
+            name: 'atguigu'
+        }// data用于存储数据，数据供el指定的容器使用  数据发生变化，指定的页面也发生变化
+        
+    });
+</script>
+</html>
